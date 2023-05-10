@@ -12,11 +12,13 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
 
-    MediaPlayer mp;
+   LinearLayout root;
     ImageView iw;
     TextView tw;
     EditText textEditView;
-    Button songButton;
+    RadioGroup bgColors;
+    RadioButton bgColorWhite;
+    RadioButton bgColorPurple;
     Button textEditButton;
     Button confirmTextButton;
 
@@ -27,16 +29,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         /* Setup all the views */
-        //root = (LinearLayout) findViewById(R.id.root);
+        root = (LinearLayout) findViewById(R.id.root);
         iw = (ImageView) findViewById(R.id.flag);
         tw = (TextView) findViewById(R.id.textview1);
         textEditView = (EditText) findViewById(R.id.edittext);
         // make texteditview invisible until textbutton has been pressed
         textEditView.setVisibility(View.INVISIBLE);
-        songButton = (Button) findViewById(R.id.songbutton);
+        bgColors = (RadioGroup) findViewById(R.id.rgrp);
+        bgColorWhite = (RadioButton) findViewById(R.id.white);
+        bgColorPurple = (RadioButton) findViewById(R.id.purple);
         textEditButton = (Button) findViewById(R.id.textbutton);
         confirmTextButton = (Button) findViewById(R.id.confirmbutton);
-        mp = MediaPlayer.create(this,R.raw.shortck);
+
 
 
 
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("editbutton", "button was clicked");
                 textEditView.setVisibility(View.VISIBLE);
                 confirmTextButton.setVisibility(View.VISIBLE);
+                textEditButton.setVisibility(View.INVISIBLE);
                /* Button confirmText = new Button(MainActivity.this);
                 confirmText.setText(R.string.button_set_new_text);
                 root.addView(confirmText);*/
@@ -57,18 +62,39 @@ public class MainActivity extends AppCompatActivity {
         confirmTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tw.setText(textEditView.getText());
-                textEditView.setVisibility(View.INVISIBLE);
-                confirmTextButton.setVisibility(View.INVISIBLE);
+                String newMessage = textEditView.getText().toString();
+                Log.i("confirmtextbutton_value", newMessage);
+                if(!newMessage.isEmpty()){
+                    tw.setText(textEditView.getText());
+                }
+
+                textEditView.setVisibility(View.GONE);
+                confirmTextButton.setVisibility(View.GONE);
+                textEditButton.setVisibility(View.VISIBLE);
             }
         });
 
-        songButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.i("songButton", "button pressed");
-                mp.setVolume(100,100);
-                mp.start();
+
+
+        bgColors.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup arg0, int id) {
+                switch (id) {
+                    case -1:
+                        Log.i("@string/TAG", "Choices cleared!");
+                        break;
+                    case R.id.white:
+                        root.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                        Log.i("@string/TAG", "Chose white");
+                        break;
+
+                    case R.id.purple:
+                        root.setBackgroundColor(getResources().getColor(R.color.colorPurple));
+                        Log.i("@string/TAG", "Chose purple");
+                        break;
+                    default:
+                        Log.i("@string/TAG", "Huh?");
+                        break;
+                }
             }
         });
 

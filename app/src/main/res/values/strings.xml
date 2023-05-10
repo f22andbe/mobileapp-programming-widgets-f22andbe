@@ -2,5 +2,9 @@
     <string name="app_name">Widgets</string>
     <string name="greeting">Слава Україні!\nГероям слава!</string>
     <string name="flagdescription">Ukrainian flag</string>
-    <string name="button_set_new_text">Set new text</string>
+    <string name="button_setmsg_text">Set new message</string>
+    <string name="bgchange">Change background color</string>
+    <string name="bgcolor_white">white</string>
+    <string name="bgcolor_purple">purple</string>
+    <string name="TAG">colorchooser radiogroup</string>
 </resources>
