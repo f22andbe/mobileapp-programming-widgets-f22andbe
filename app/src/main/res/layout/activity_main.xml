@@ -1,18 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/flag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/flagdescription"
+        android:src="@drawable/flag" />
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/greeting"
+        android:textSize="15pt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="30sp"
+        android:enabled="true"
+        android:gravity="center_horizontal"
+        android:ems="30"
+        android:text="Enter new message here" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/songbutton"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="Play song"
+            android:textColor="@color/statelist"/>
+        <Button
+            android:id="@+id/textbutton"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Change text"
+            android:textColor="@color/statelist"/>
+    </LinearLayout>
+</LinearLayout>

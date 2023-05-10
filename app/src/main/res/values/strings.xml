@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Widgets</string>
+    <string name="greeting">Слава Україні!\nГероям слава!</string>
+    <string name="flagdescription">Ukrainian flag</string>
 </resources>
