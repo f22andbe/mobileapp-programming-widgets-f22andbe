@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -28,6 +29,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/confirmbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set new text"
+        android:visibility="invisible"/>
+
     <EditText
         android:id="@+id/edittext"
         android:layout_width="match_parent"
@@ -37,7 +45,9 @@
         android:enabled="true"
         android:gravity="center_horizontal"
         android:ems="30"
-        android:text="Enter new message here" />
+        android:hint="Enter new message here"
+        android:inputType="text"
+        android:imeOptions="actionDone"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -59,4 +69,5 @@
             android:text="Change text"
             android:textColor="@color/statelist"/>
     </LinearLayout>
+
 </LinearLayout>
