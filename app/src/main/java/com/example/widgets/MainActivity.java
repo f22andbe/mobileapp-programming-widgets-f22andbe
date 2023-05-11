@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
         iw = (ImageView) findViewById(R.id.flag);
         tw = (TextView) findViewById(R.id.textview1);
         textEditView = (EditText) findViewById(R.id.edittext);
-        // make textEditView invisible until textButton has been pressed
-        textEditView.setVisibility(View.INVISIBLE);
         bgColors = (RadioGroup) findViewById(R.id.rgrp);
         bgColorWhite = (RadioButton) findViewById(R.id.white);
         bgColorPurple = (RadioButton) findViewById(R.id.purple);
