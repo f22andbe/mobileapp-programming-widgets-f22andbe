@@ -3,6 +3,7 @@
     <string name="greeting">Слава Україні!\nГероям слава!</string>
     <string name="flagdescription">Ukrainian flag</string>
     <string name="button_setmsg_text">Set new message</string>
+    <string name="edit_hint">Enter new message here</string>
     <string name="bgchange">Change background color</string>
     <string name="bgcolor_white">white</string>
     <string name="bgcolor_purple">purple</string>
