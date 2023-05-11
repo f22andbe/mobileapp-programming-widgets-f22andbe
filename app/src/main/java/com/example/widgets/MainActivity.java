@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         /* Setup all the views */
+        
         root = (LinearLayout) findViewById(R.id.root);
         iw = (ImageView) findViewById(R.id.flag);
         tw = (TextView) findViewById(R.id.textview1);
