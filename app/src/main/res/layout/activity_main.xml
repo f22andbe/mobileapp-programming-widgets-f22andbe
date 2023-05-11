@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
+    android:onClick="onClickLayout"
     tools:context=".MainActivity">
 
     <ImageView
@@ -78,13 +79,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="30pt"
-            android:text="@string/bgcolor_white"/>
+            android:text="@string/bgcolor_white" />
 
         <RadioButton android:id="@+id/purple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="30pt"
-            android:text="@string/bgcolor_purple"/>
+            android:text="@string/bgcolor_purple" />
     </RadioGroup>
 
 

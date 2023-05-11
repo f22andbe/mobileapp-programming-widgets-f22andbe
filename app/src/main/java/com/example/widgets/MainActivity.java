@@ -2,7 +2,6 @@ package com.example.widgets;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
@@ -12,7 +11,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
 
-   LinearLayout root;
+    LinearLayout root;
     ImageView iw;
     TextView tw;
     EditText textEditView;
@@ -76,12 +75,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         bgColors.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup arg0, int id) {
                 switch (id) {
-                    case -1:
-                        Log.i("@string/TAG", "Choices cleared!");
-                        break;
                     case R.id.white:
                         root.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                         Log.i("@string/TAG", "Chose white");
@@ -100,4 +97,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    public void onClickLayout(View v) {
+
+        bgColors.clearCheck();
+
+    }
+
 }
