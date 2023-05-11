@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         iw = (ImageView) findViewById(R.id.flag);
         tw = (TextView) findViewById(R.id.textview1);
         textEditView = (EditText) findViewById(R.id.edittext);
-        // make texteditview invisible until textbutton has been pressed
+        // make textEditView invisible until textButton has been pressed
         textEditView.setVisibility(View.INVISIBLE);
         bgColors = (RadioGroup) findViewById(R.id.rgrp);
         bgColorWhite = (RadioButton) findViewById(R.id.white);
@@ -46,14 +46,10 @@ public class MainActivity extends AppCompatActivity {
         /* Setup event handlers */
         textEditButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Log.i("editbutton", "button was clicked");
+                Log.i("editButton", "button was clicked");
                 textEditView.setVisibility(View.VISIBLE);
                 confirmTextButton.setVisibility(View.VISIBLE);
                 textEditButton.setVisibility(View.INVISIBLE);
-               /* Button confirmText = new Button(MainActivity.this);
-                confirmText.setText(R.string.button_set_new_text);
-                root.addView(confirmText);*/
-
             }
         });
 
@@ -62,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String newMessage = textEditView.getText().toString();
-                Log.i("confirmtextbutton_value", newMessage);
+                Log.i("confirmTextButton_value", newMessage);
                 if(!newMessage.isEmpty()){
                     tw.setText(textEditView.getText());
                 }
@@ -78,20 +74,17 @@ public class MainActivity extends AppCompatActivity {
 
         bgColors.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup arg0, int id) {
-                switch (id) {
-                    case R.id.white:
-                        root.setBackgroundColor(getResources().getColor(R.color.colorWhite));
-                        Log.i("@string/TAG", "Chose white");
-                        break;
 
-                    case R.id.purple:
-                        root.setBackgroundColor(getResources().getColor(R.color.colorPurple));
-                        Log.i("@string/TAG", "Chose purple");
-                        break;
-                    default:
-                        Log.i("@string/TAG", "Huh?");
-                        break;
+                if(id == R.id.white){
+                    root.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                    Log.i("@string/TAG", "Chose white");
+                }else if(id == R.id.purple){
+                    root.setBackgroundColor(getResources().getColor(R.color.colorPurple));
+                    Log.i("@string/TAG", "Chose purple");
+                }else {
+                    Log.i("@string/TAG", "Huh?");
                 }
+
             }
         });
 
