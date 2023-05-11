@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         /* Setup event handlers */
+
+        /* click handler for textEditButton
+         * make textEditButton invisible and textEditView and confirmTextButton visible
+         */
         textEditButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.i("editButton", "button was clicked");
@@ -51,7 +55,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        /* click listener for confirmTextButton
+         * check if a message has been input into textEditView and update message if it has
+         * restore the original visibility of textEditView, confirmTextButton and textEditButton
+         */
         confirmTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        /* click handler for the RadioGroup
+         * anytime button that has focus is changed this is run
+         */
         bgColors.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup arg0, int id) {
 
@@ -89,7 +98,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+/* click handler for the LinearLayout
+ * if any button in the RadioGroup has focus, it clears it
+ */
     public void onClickLayout(View v) {
 
         bgColors.clearCheck();
